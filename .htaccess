@@ -1,0 +1,14 @@
+
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule ^(.*)$ index.php
+RewriteRule ^404?$ 404.php [NC,L]
+ErrorDocument 404 http://localhost/SecondSite/404
+</IfModule>
+AddDefaultCharset UTF-8
+php_value session.gc_maxlifetime 10800
+php_value session.cookie_lifetime 10800
